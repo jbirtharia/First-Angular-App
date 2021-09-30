@@ -1,0 +1,34 @@
+<div>
+  Enter your name -
+  <input type="text" [(ngModel)]="name" #nameText/> <br/>
+  <h6 *ngIf="name.length" style="color: green;">The name is -- {{name}}</h6>
+</div>
+
+
+<div>
+  Enter Message -
+  <!-- x is reference variable and its scope is within the login template -->
+  <input type="text" [(ngModel)]="val" #x/>
+</div>
+
+<div *ngIf = "val.length">
+
+  <p> Entered Value - {{val}}</p>
+
+</div>
+
+<div style="color: red;">
+
+  <p> Value getting from variable is - {{ x.value }}</p>
+  <p> And its size is {{ x.size }}</p>
+
+</div>
+
+<div>
+  <button class="button" (click) = "clickEventHandler(x)"> Template Reference</button>
+</div>
+
+<br/>
+<div>
+  <button class="button" (click) = "invokeLogger($event)"> Invoke Logger</button>
+</div>

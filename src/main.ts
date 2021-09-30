@@ -8,5 +8,6 @@ if (environment.production) {
   enableProdMode();
 }
 
+// Following line will check file which is annotted by @NgModule i.e. AppModule.
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));

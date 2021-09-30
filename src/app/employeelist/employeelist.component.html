@@ -1,0 +1,65 @@
+<br> <br>
+<div style="color: red;" *ngIf = "name.length">
+
+  <h6> You clicked on the box of {{name | uppercase}} </h6>
+
+</div>
+
+
+<!-- <app-displayemployee [employee]=employees[0] style="color: red;"> </app-displayemployee>
+
+<app-displayemployee [employee]=employees[1] style="color: blue;"> </app-displayemployee>
+
+<app-displayemployee [employee]=employees[2] style="color: green;"> </app-displayemployee>
+
+<app-displayemployee [employee]=employees[3] style="color: brown  ;"> </app-displayemployee> -->
+
+<button class="btn btn-secondary" (click) = "parentToggleDetails()"> Hide / Show Emp Details </button><br/><br/>
+<button class="btn btn-secondary" (click) = "invokeLogger()"> Service Invocation </button><br/><br/>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4" *ngFor = "let e of employees">
+      <div>
+      <!-- Calling event handler method of employee component which is raised by display component
+      (i.e. child component) by passing $event, which contains payload of event (which is employee object) -->
+      <app-displayemployee #emp [employee] = e (notifyEvent)="eventHandler($event)" style="color: green;"> </app-displayemployee>
+      </div>
+      <br/><br/>
+    </div>
+  </div>
+</div>
+
+
+<!-- <div class="container">
+
+  <h2 class="header-top">EMPLOYEE DETAILS</h2>
+
+  <table id = "customers"class="table table-light">
+    <thead>
+      <th> Index </th>
+      <th> Code </th>
+      <th> Name </th>
+      <th> Gender </th>
+      <th> Annual Salary </th>
+      <th> Date Of Birth </th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor = "let employee of employees;
+                    index as i;
+                    trackBy: trackByEmployeeCode">
+        <td>{{ i+1 }}</td>
+        <td>{{ employee.code }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.gender }}</td>
+        <td>{{ employee.annualSalary }}</td>
+        <td>{{ employee.dateOfBirth }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+<br />
+
+<button class="button" (click) = "getEmployees()"> Refresh Employees </button>
+
+</div> -->

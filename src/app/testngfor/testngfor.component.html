@@ -1,0 +1,28 @@
+<h4>Person Data :</h4>
+
+<!-- <ul>
+  <li *ngFor = "let person of personArray">
+    {{person.id}} - {{person.name}} - {{person.age}}
+  </li>
+</ul> -->
+
+<table border="2">
+
+  <th>ID</th>
+  <th>NAME</th>
+  <th>AGE</th>
+  <tr *ngFor = "let person of personArray">
+    <td>{{person.id}}</td>
+    <td>{{person.name}}</td>
+    <td>{{person.age}}</td>
+  </tr>
+</table>
+
+<br><br>
+
+<select [(ngModel)]="name">
+  <option *ngFor = "let person of personArray" value="{{person.name}}">
+    {{person.name}}
+  </option>
+</select>
+<h4> {{name}} </h4>

@@ -1,0 +1,20 @@
+<br><br>
+
+<ng-container *ngIf="show ; then thenBlock ; else elseBlock"> </ng-container>
+
+
+<ng-template #elseBlock>
+
+  <h4 style="color: red;"> Else block is rendered when show is false</h4>
+
+</ng-template>
+
+<ng-template #thenBlock>
+
+  <h4 style="color: blue;" [ngStyle] = "addStyle()"> Then block is rendered when show is true</h4>
+
+</ng-template>
+
+<button class="button" (click)="toggle()" [style.font-weight]="isBold ? 'bold' : 'normal'" [style.color]="isBold ? 'black' : 'red'">
+  {{ show ? "Hide" : "Show" }}
+</button>
